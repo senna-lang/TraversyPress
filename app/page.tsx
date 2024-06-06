@@ -1,7 +1,33 @@
+import DashboardCard from "@/components/dashboard/dashboard-card";
+import { Icons } from "@/components/icons";
+import PostsTable from "@/components/posts./posts-table";
+
 export default function Home() {
   return (
     <>
-      <h1 className="text2xl">hello</h1>
+      <div className="flex flex-col md:flex-row justify-between gap-5 mb-5">
+        <DashboardCard
+          title="Posts"
+          count={100}
+          icon={<Icons.newspaper className=" text-slate-500" size={72} />}
+        />
+        <DashboardCard
+          title="Categories"
+          count={12}
+          icon={<Icons.folders className=" text-slate-500" size={72} />}
+        />
+        <DashboardCard
+          title="Users"
+          count={750}
+          icon={<Icons.user className=" text-slate-500" size={72} />}
+        />
+        <DashboardCard
+          title="Comments"
+          count={1200}
+          icon={<Icons.messagePlus className=" text-slate-500" size={72} />}
+        />
+      </div>
+      <PostsTable title="LatestPost" limit={5}/>
     </>
   );
 }
