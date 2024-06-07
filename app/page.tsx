@@ -1,6 +1,7 @@
 import DashboardCard from "@/components/dashboard/dashboard-card";
 import { Icons } from "@/components/icons";
 import PostsTable from "@/components/posts./posts-table";
+import DashboardChart from "@/components/dashboard/dashboard-chart";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
           icon={<Icons.messagePlus className=" text-slate-500" size={72} />}
         />
       </div>
+      <DashboardChart />
       <PostsTable title="LatestPost" limit={5}/>
     </>
   );
