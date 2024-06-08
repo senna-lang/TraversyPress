@@ -1,5 +1,6 @@
 import {
    ArrowRightFromLine,
+   ArrowLeftCircle,
    Check,
    LucideProps,
    Menu,
@@ -23,6 +24,7 @@ import {
    paperclip: Paperclip,
    hamburgerMenu: Menu,
    arrowRight: ArrowRightFromLine,
+    arrowLeft: ArrowLeftCircle,
    dashboard: LayoutDashboard,
    newspaper: Newspaper,
    folders: Folders,
