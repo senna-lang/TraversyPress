@@ -1,6 +1,4 @@
-import Navbar from "@/components/nav-bar";
 import { ThemeProvider } from "@/components/provider/theme-provider";
-import Sidebar from "@/components/sidebar";
 import { Toaster } from "@/components/ui/toaster";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -21,14 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem storageKey="dashboard-theme">
-          <Navbar />
-          <div className="flex">
-            <div className=" hidden md:block h-screen w-[300px]">
-              <Sidebar />
-            </div>
-            <div className=" p-5 w-full md:max-w-[1140px]">{children}</div>
-          </div>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          storageKey="dashboard-theme"
+        >
+          {children}
           <Toaster />
         </ThemeProvider>
       </body>
