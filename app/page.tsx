@@ -1,7 +1,7 @@
 import DashboardCard from "@/components/dashboard/dashboard-card";
-import { Icons } from "@/components/icons";
-import PostsTable from "@/components/posts./posts-table";
 import DashboardChart from "@/components/dashboard/dashboard-chart";
+import { Icons } from "@/components/icons";
+import PostsTable from "@/components/posts/posts-table";
 
 export default function Home() {
   return (
@@ -29,7 +29,7 @@ export default function Home() {
         />
       </div>
       <DashboardChart />
-      <PostsTable title="LatestPost" limit={5}/>
+      <PostsTable title="LatestPost" limit={5} />
     </>
   );
 }

@@ -1,6 +1,6 @@
-import PostsTable from "@/components/posts./posts-table"
-import BackButton from "@/components/back-button"
-import PostsPagination from "@/components/posts./posts-pagination"
+import BackButton from "@/components/back-button";
+import PostsPagination from "@/components/posts/posts-pagination";
+import PostsTable from "@/components/posts/posts-table";
 
 const PostsPage = () => {
   return (
@@ -9,7 +9,7 @@ const PostsPage = () => {
       <PostsTable />
       <PostsPagination />
     </div>
-  )
-}
+  );
+};
 
-export default PostsPage
+export default PostsPage;

@@ -1,3 +1,4 @@
+"use client";
 import BackButton from "@/components/back-button";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,6 +11,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/components/ui/use-toast";
 import { posts } from "@/data/posts";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -29,6 +31,7 @@ interface PostsEditFormProps {
 }
 
 const PostEditPage = ({ params }: PostsEditFormProps) => {
+  const { toast } = useToast();
   const post = posts.find(post => post.id === params.id);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -41,7 +44,10 @@ const PostEditPage = ({ params }: PostsEditFormProps) => {
   });
 
   const handleSubmit = (data: z.infer<typeof formSchema>) => {
-    console.log(data);
+    toast({
+      title: "Post Updated successfully",
+      description: `Updated by ${data.author} on ${data.date}`,
+    });
   };
 
   return (
@@ -126,7 +132,12 @@ const PostEditPage = ({ params }: PostsEditFormProps) => {
               </FormItem>
             )}
           />
-          <Button type="submit" className=" w-full dark:bg-slate-800 dark:text-white">Update Posts</Button>
+          <Button
+            type="submit"
+            className=" w-full dark:bg-slate-800 dark:text-white"
+          >
+            Update Posts
+          </Button>
         </form>
       </Form>
     </div>
