@@ -1,3 +1,8 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
+import logo from "../public/logo.png";
+import ThemeToggler from "./theme-toggler";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -6,11 +11,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import Image from "next/image";
-import Link from "next/link";
-import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
-import logo from "../public/logo.png";
-import ThemeToggler from "./theme-toggler";
 
 const Navbar = () => {
   return (

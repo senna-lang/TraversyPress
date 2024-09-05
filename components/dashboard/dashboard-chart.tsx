@@ -1,6 +1,5 @@
 "use client";
 
-import data from "@/data/ analytics";
 import {
   CartesianGrid,
   Line,
@@ -16,6 +15,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
+import data from "@/data/ analytics";
 
 const DashboardChart = () => {
   return (

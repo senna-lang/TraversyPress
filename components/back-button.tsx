@@ -1,8 +1,5 @@
 import Link from "next/link";
 import { Icons } from "./icons";
-import * as z from "zod";
-import {useForm} from "react-hook-form";
-import {zodResolver} from "@hookform/resolvers/zod";
 
 
 interface BackButtonProps {

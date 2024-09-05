@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { Icons } from "./icons";
 import {
   Command,
   CommandEmpty,
@@ -8,8 +10,6 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/components/ui/command";
-import Link from "next/link";
-import { Icons } from "./icons";
 
 const Sidebar = () => {
   return (

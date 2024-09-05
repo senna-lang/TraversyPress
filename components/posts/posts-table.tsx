@@ -1,3 +1,6 @@
+"use client";
+import Link from "next/link";
+import { useEffect } from "react";
 import {
   Table,
   TableBody,
@@ -9,7 +12,6 @@ import {
 } from "@/components/ui/table";
 import { posts } from "@/data/posts";
 import { Post } from "@/types/posts";
-import Link from "next/link";
 
 interface PostsTableProps {
   limit?: number;
@@ -17,15 +19,13 @@ interface PostsTableProps {
 }
 
 const PostsTable = ({ limit, title }: PostsTableProps) => {
+  // Sorted posts in dec order based on date
+  const sortedPosts: Post[] = [...posts].sort((a, b) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
 
-   // Sorted posts in dec order based on date
-   const sortedPosts: Post[] =[...posts].sort((a, b) => {
-   return new Date(b.date).getTime() - new Date(a.date).getTime();
-   });
-
-   //Filter posts based on limit
-   const filteredPosts = limit ? sortedPosts.slice(0, limit) : sortedPosts;
-
+  //Filter posts based on limit
+  const filteredPosts = limit ? sortedPosts.slice(0, limit) : sortedPosts;
   return (
     <div className=" mt-10">
       <h3 className=" text-2xl mb-4 font-semibold">

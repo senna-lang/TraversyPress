@@ -1,4 +1,7 @@
 "use client";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
 import BackButton from "@/components/back-button";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,9 +16,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { posts } from "@/data/posts";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
 
 const formSchema = z.object({
   title: z.string().min(1, "Title is required"),
@@ -55,7 +55,10 @@ const PostEditPage = ({ params }: PostsEditFormProps) => {
       <BackButton text="Back To Posts" link="/posts" />
       <h3 className=" text-2xl mb-4">Edit Post</h3>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(handleSubmit)} className=" space-y-8">
+        <form
+          onSubmit={() => form.handleSubmit(handleSubmit)}
+          className=" space-y-8"
+        >
           <FormField
             control={form.control}
             name="title"
